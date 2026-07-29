@@ -15,7 +15,7 @@ une petite scène 3D animée.
 ## Démarrage
 
 1. Ouvrez `Meteo3D.xcodeproj` avec Xcode 26 ou plus récent.
-2. Choisissez un simulateur iOS 17+.
+2. Choisissez un simulateur iOS 17+ ou **My Mac (Mac Catalyst)**.
 3. Lancez l’application avec `⌘R`.
 
 Le projet utilise [Open-Meteo](https://open-meteo.com/) pour les prévisions et
