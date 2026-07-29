@@ -46,13 +46,25 @@ struct WeatherView: View {
 
     private var gradientColors: [Color] {
         guard current?.isDay != 0 else {
-            return [Color(red: 0.04, green: 0.06, blue: 0.18), Color(red: 0.12, green: 0.13, blue: 0.32)]
+            return [
+                Color(red: 0.08, green: 0.04, blue: 0.24),
+                Color(red: 0.19, green: 0.10, blue: 0.46),
+                Color(red: 0.04, green: 0.22, blue: 0.42)
+            ]
         }
         switch kind {
         case .clear, .partlyCloudy:
-            return [Color(red: 0.08, green: 0.42, blue: 0.72), Color(red: 0.33, green: 0.74, blue: 0.86)]
+            return [
+                Color(red: 0.96, green: 0.26, blue: 0.08),
+                Color(red: 0.96, green: 0.48, blue: 0.18),
+                Color(red: 0.43, green: 0.18, blue: 0.66)
+            ]
         default:
-            return [Color(red: 0.12, green: 0.22, blue: 0.34), Color(red: 0.3, green: 0.38, blue: 0.46)]
+            return [
+                Color(red: 0.10, green: 0.22, blue: 0.72),
+                Color(red: 0.34, green: 0.16, blue: 0.68),
+                Color(red: 0.02, green: 0.48, blue: 0.56)
+            ]
         }
     }
 
@@ -124,7 +136,7 @@ struct WeatherView: View {
     private func metric(_ title: String, value: String, icon: String) -> some View {
         VStack(spacing: 8) {
             Image(systemName: icon)
-                .foregroundStyle(.cyan)
+                .foregroundStyle(Color(red: 0.30, green: 0.94, blue: 0.78))
             Text(value)
                 .font(.subheadline.bold())
                 .lineLimit(1)
@@ -157,7 +169,7 @@ struct WeatherView: View {
                                 .foregroundStyle(.secondary)
                             Label("\(day.rainChance)%", systemImage: "drop.fill")
                                 .font(.caption2)
-                                .foregroundStyle(.cyan)
+                                .foregroundStyle(Color(red: 0.30, green: 0.94, blue: 0.78))
                         }
                         .frame(width: 72)
                         .padding(.vertical, 12)
